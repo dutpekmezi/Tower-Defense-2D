@@ -1,13 +1,18 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EntityData", menuName = "Game/Scriptable Objects/Entity/EntityData")]
-public class EntityData : ScriptableObject
+namespace dutpekmezi
 {
-    public string Id;
-    public string Name;
+    [CreateAssetMenu(fileName = "EntityData", menuName = "Game/Scriptable Objects/Entity/EntityData")]
+    public class EntityData : ScriptableObject
+    {
+        public string Id;
+        public string Name;
 
-    public int MaxHealth;
-    public float AttackDamage;
+        public int MaxHealth;
+        public float AttackDamage;
 
-    public GameObject Prefab;
+        public Sprite Sprite;
+
+        public GameObject Prefab;
+    }
 }

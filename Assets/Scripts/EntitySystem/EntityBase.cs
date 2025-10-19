@@ -5,6 +5,9 @@ namespace dutpekmezi
     [RequireComponent(typeof(Collider2D))]
     public class EntityBase : MonoBehaviour
     {
+        [Header("Assigned Data")]
+        [SerializeField] private EntityData entityData;
+
         [Header("References")]
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private Collider2D col;
