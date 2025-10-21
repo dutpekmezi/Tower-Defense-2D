@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace Resolve.Services.SaveServices
+namespace Dutpekmezi.Services.SaveServices
 {
     public class PrimitiveSaveHelper
     {

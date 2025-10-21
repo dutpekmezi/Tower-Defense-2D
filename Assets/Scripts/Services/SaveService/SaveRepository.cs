@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Resolve.Services.SaveServices
+namespace Dutpekmezi.Services.SaveServices
 {
     public class SaveRepository<T> where T : ISaveable, new()
     {

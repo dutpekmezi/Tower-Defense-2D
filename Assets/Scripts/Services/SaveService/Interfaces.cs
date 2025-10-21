@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Resolve.Services.SaveServices
+namespace Dutpekmezi.Services.SaveServices
 {
     // Lowest-level abstraction: only reads/writes strings.
     public interface ISaveHandler

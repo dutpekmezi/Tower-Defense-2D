@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace dutpekmezi
+namespace Dutpekmezi.Services.SceneServices
 {
     public static class SceneService
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Resolve.Services.SaveServices
+namespace Dutpekmezi.Services.SaveServices
 {
     public class SaveService : ISaveService
     {

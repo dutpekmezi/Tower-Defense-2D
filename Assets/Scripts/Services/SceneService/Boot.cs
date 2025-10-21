@@ -1,4 +1,4 @@
-using dutpekmezi;
+using Dutpekmezi.Services.SceneServices;
 using UnityEngine;
 
 public class Boot : MonoBehaviour
