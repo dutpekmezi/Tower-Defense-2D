@@ -39,10 +39,10 @@ namespace Dutpekmezi.Services.PoolService
             _particleSystemsEmpty.transform.SetParent(_emptyHolder.transform);
 
             _gameObjectsEmpty = new GameObject("Game Objects");
-            _gameObjectsEmpty.transform.SetParent(_gameObjectsEmpty.transform);
+            _gameObjectsEmpty.transform.SetParent(_emptyHolder.transform);
 
             _soundFXEmpty = new GameObject("Sound FX");
-            _soundFXEmpty.transform.SetParent(_soundFXEmpty.transform);
+            _soundFXEmpty.transform.SetParent(_emptyHolder.transform);
 
             if (_addToDontDestroyOnLoad)
             {
@@ -205,24 +205,52 @@ namespace Dutpekmezi.Services.PoolService
             return default;
         }
 
+        // Component - spawnPos and rotation
         public static T SpawnObject<T>(T typePrefab, Vector3 spawnPos, Quaternion spawnRotation, PoolType poolType = PoolType.GameObjects) where T : Component
         {
             return SpawnObject<T>(typePrefab.gameObject, spawnPos, spawnRotation, poolType);
         }
 
+        // GameObject - spawnPos and rotation
         public static GameObject SpawnObject(GameObject objectToSpawn, Vector3 spawnPos, Quaternion spawnRotation, PoolType poolType = PoolType.GameObjects)
         {
             return SpawnObject<GameObject>(objectToSpawn, spawnPos, spawnRotation, poolType);
         }
 
+        // Component - parent and rotation
         public static T SpawnObject<T>(T typePrefab, Transform parent, Quaternion spawnRotation, PoolType poolType = PoolType.GameObjects) where T : Component
         {
             return SpawnObject<T>(typePrefab.gameObject, parent, spawnRotation, poolType);
         }
 
+        // GameObject - parent and rotation
         public static GameObject SpawnObject(GameObject objectToSpawn, Transform parent, Quaternion spawnRotation, PoolType poolType = PoolType.GameObjects)
         {
             return SpawnObject<GameObject>(objectToSpawn, parent, spawnRotation, poolType);
+        }
+
+        // GameObject - position only (no rotation)
+        public static GameObject SpawnObject(GameObject objectToSpawn, Vector3 spawnPos, PoolType poolType = PoolType.GameObjects)
+        {
+            return SpawnObject<GameObject>(objectToSpawn, spawnPos, Quaternion.identity, poolType);
+        }
+
+        // Component - position only (no rotation)
+        public static T SpawnObject<T>(T typePrefab, Vector3 spawnPos, PoolType poolType = PoolType.GameObjects) where T : Component
+        {
+            return SpawnObject<T>(typePrefab.gameObject, spawnPos, Quaternion.identity, poolType);
+        }
+
+        // GameObject - parent only (no rotation)
+        public static GameObject SpawnObject(GameObject objectToSpawn, Transform parent, PoolType poolType = PoolType.GameObjects)
+        {
+            return SpawnObject<GameObject>(objectToSpawn, parent, Quaternion.identity, poolType);
+        }
+
+        // Component - parent only (no rotation)
+        public static T SpawnObject<T>(T typePrefab, Transform parent, PoolType poolType = PoolType.GameObjects) where T : Component
+        {
+            return SpawnObject<T>(typePrefab.gameObject, parent, Quaternion.identity, poolType);
         }
 
         public static void ReturnObjectToPool(GameObject obj, PoolType poolType = PoolType.GameObjects)
